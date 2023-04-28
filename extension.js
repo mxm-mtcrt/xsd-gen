@@ -22,7 +22,7 @@ function runJar(context) {
 	const fileDir = path.parse(filePath).dir;
 	const extPath = context.extensionPath;
 
-	exec('java -jar ' + extPath + '\\jars\\xsd-gen-fat-0.2.4.jar ' + fileDir + '\\' + fileName + '.xml > ' + fileDir + '\\' + fileName + '.xsd', (error, stdout, stderr) => {
+	exec('java -jar "' + extPath + '\\jars\\xsd-gen-fat-0.2.4.jar" "' + fileDir + '\\' + fileName + '.xml" > "' + fileDir + '\\' + fileName + '.xsd"', (error, stdout, stderr) => {
 		if (error) {
 			console.error('Erreur: ' + error.message);
 			vscode.window.showErrorMessage('Erreur lors de la génération du fichier XSD: ' + error.message);
