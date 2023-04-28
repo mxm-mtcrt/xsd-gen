@@ -22,16 +22,6 @@ function runJar(context) {
 	const fileDir = path.parse(filePath).dir;
 	const extPath = context.extensionPath;
 
-	// exec('dir', (error, stdout, stderr) => {
-	// 	if (error) {
-	// 		console.error('Erreur: \\' + fileName);
-	// 		vscode.window.showErrorMessage('Erreur dir: ' + error.message);
-	// 		return;
-	// 	}
-
-	// 	console.error('stdout: ' + fileDir);
-	// });
-
 	exec('java -jar ' + extPath + '\\jars\\xsd-gen-fat-0.2.4.jar ' + fileDir + '\\' + fileName + '.xml > ' + fileDir + '\\' + fileName + '.xsd', (error, stdout, stderr) => {
 		if (error) {
 			console.error('Erreur: ' + error.message);
@@ -40,7 +30,6 @@ function runJar(context) {
 		}
 
 		console.log('stdout: ' + stdout);
-		// console.error('stderr: ' + stderr);
 		vscode.window.showInformationMessage('Fichier XSD généré avec succès : ' + fileName + '.xsd');
 	});
 }
