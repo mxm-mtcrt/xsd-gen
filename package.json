@@ -3,6 +3,10 @@
   "displayName": "XSD Generator",
   "description": "xsd generator",
   "version": "1.0.0",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/mxm-mtcrt/xsd-gen"
+},
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -190,6 +194,5 @@
     "yocto-queue": "^0.1.0"
   },
   "author": "mmontcou",
-  "publisher": "mmontcou",
-  "license": "ISC"
+  "publisher": "mmontcou"
 }
